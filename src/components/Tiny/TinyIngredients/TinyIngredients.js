@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-const tinyIngredient = (props) => {
-	let ingredient = null;
+class TinyIngredient extends Component {
+	render() {
+		let ingredient = null;
 
-	switch (props.type) {
+	switch (this.props.type) {
 		case ('bread-bottom'):
 			ingredient = <div className={classes.BreadBottom}></div>;
 			break;
@@ -27,10 +29,15 @@ const tinyIngredient = (props) => {
 		case ('bacon'):
 			ingredient = <div className={classes.Bacon}></div>
 			break;
+			}
+		return ingredient;
 	}
-	return ingredient;
+}
+	
+TinyIngredient.propTypes = {
+	type: PropTypes.string.isRequired
 };
 
-export default tinyIngredient;
+export default T inyIngredient;
 
 
