@@ -3,11 +3,19 @@ import classes from './Tiny.css';
 import TinyIngredients from './TinyIngredients/TinyIngredients';
 
 const Tiny = (props) => {
+	const transformedIngredients = Object.keys( props.ingredients )
+			.map( igkey => {
+				return [...Array(props.ingredients[igkey])].map(( _, i) => {
+					return <TinyIngredients key={igkey + i} type={igkey} />;
+				});
+			});
+
+
+
 	return (
 		<div className={classes.Tiny}>
 			<TinyIngredients type="bread-top" />
-			<TinyIngredients type="cheese" />
-			<TinyIngredients type="meat" />
+			{transformedIngredients}
 			<TinyIngredients type="bread-bottom" />
 		</div>
 	);
