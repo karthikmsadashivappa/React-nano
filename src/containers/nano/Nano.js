@@ -5,9 +5,9 @@ import Tiny from '../../components/Tiny/Tiny';
 class Nano extends Component {
 	state = {
 		ingredients: {
-			cheese: 1,
-			salad: 2,
-			bacon: 1
+			cheese: 0,
+			salad: 0,
+			bacon: 0
 		}
 	}
 	render(){
