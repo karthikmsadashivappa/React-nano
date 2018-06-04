@@ -1,13 +1,19 @@
 import React from 'react';
 import classes from './BuildControls.css';
+import BuildControl from './BuildControl/BuildControl';
+
+const controls = [
+	{ label: 'Salad', type: 'salad' },
+	{ label: 'Bacon', type: 'bacon' },
+	{ label: 'Cheese', type: 'cheese' },
+	{ label: 'Meat', type: 'meat' }
+]
 
 const BuildControls = (props) => (
-	<div className={classes.BuildControl}>
-		<div className={classes.label}>
-			{props.label}
-		</div>
-		<button className={classes.Less}>Less</button>
-		<button className={classes.More}>More</button>
+	<div className={classes.BuildControls}>
+		{controls.map(ctrl => (
+			<BuildControl key={ctrl.label} label={ctrl.label}/>
+		))}
 	</div>
 ); 
 

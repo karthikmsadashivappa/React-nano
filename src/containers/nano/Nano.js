@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
 import Tiny from '../../components/Tiny/Tiny';
+import BuildControls from'../../components/Tiny/BuildControls/BuildControls';
 
 class Nano extends Component {
 	state = {
@@ -14,7 +15,7 @@ class Nano extends Component {
 		return(
 			<Aux>
 				<Tiny ingredients={this.state.ingredients}/>
-				<div>Build Controls</div>
+				<BuildControls />
 			</Aux>
 		);
 	}
